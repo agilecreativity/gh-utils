@@ -1,24 +1,80 @@
 # gh-utils
 
 Clojure library designed to automate some useful git command without the need to
-use the web. Based on the [tentacles][] library
+use the web browser. Based on the [tentacles][] library with sensible default.
 
-## Usage
+### Installation and usage as command line interface (CLI)
 
-Since the version of [tentacles][] contain the bugs with [clj-http][], the workaround
-involve using local version of the `project.clj` e.g.
+#### Installation
 
 ```sh
-mkdir -p ~/codes && cd ~/codes
-git clone git@github.com:Raynes/tentacles.git
-cd tentacles
-# update `clj-http` from 1.0.1 to 2.0.1
-# And change version to new version `defproject tentacles "0.5.2"`
-# Then publish the library locally
-lein install
+# Clone this repository locally
+mkdir -p ~/projects
+
+git clone https://github.com/agilecreativity/gh-utils.git ~/projects/gh-utils
+
+cd ~/projects/gh-utils
+
+# Create the `~/bin` folder to hold the executable
+mkdir -p ~/bin
+
+# Generate the standalone using `lein bin`
+lein bin
 ```
 
-## License
+#### Usage
+
+You will need to create the provide the credential in the the file called `config.edn`
+in the following format:
+
+```clj
+{:username "YOUR-GITHUB-ID"
+ :password "YOUR-GITHUB-PASSWORD"}
+```
+
+- To create a repository called `my-awesome-idea` (private by default) try
+
+```sh
+# The long version
+gh-utils --config config.edn --repo my-awesome-idea
+
+# Or shorter version
+gh-utils -c config.edn -r my-awesome-idea
+```
+
+- If you already inside the root directory of the project and the file `config.edn` is
+in already in the same directory that you are running this command then
+
+```sh
+mkdir -p ~/codes/my-awesome-idea
+cd ~/codes/my-awesome-idea
+
+# Create the new Github repository of the name 'my-awesome-idea' in Github
+gh-utils
+```
+
+Now open `https//github.com/YOUR-GITHUB-ID/my-awesome-idea` in your browser.
+
+### Development
+
+- Leiningen
+
+```clj
+[org.clojars.agilecreativity/gh-utils "0.1.0"]
+```
+
+### Links
+
+- The original [tentacles](http://raynes.github.io/tentacles/) documentation
+- My [forked version](https://github.com/agilecreativity/tentacles) with newer version of [clj-http][]
+- Ways people are trying to address this issue on [Stack Overflow](http://stackoverflow.com/questions/2423777/is-it-possible-to-create-a-remote-repo-on-github-from-the-cli-without-opening-br)
+
+### TODOs
+
+- [ ] Add the intial commit with README.md file `touch README.md && git add README.md && git commit -m "Add README.md" && git push"`
+- [ ] Make sure we can load configuration from any directory e.g. `github-new-repo -c ../some/path/config.edn` should work
+
+### License
 
 Copyright © 2016 Burin Choomnuan
 
@@ -28,4 +84,4 @@ your option) any later version.
 ---
 
 [tentacles]: http://github.com/Raynes/tentacles.git
-[clj-http]: http:/clojure.com/
+[clj-http]: https://github.com/dakrone/clj-http

@@ -1,0 +1,4 @@
+#!/bin/bash
+lein pom
+mvn dependency:sources
+mvn eclipse:eclipse
