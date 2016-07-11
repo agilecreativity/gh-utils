@@ -2,6 +2,8 @@
 
 Clojure library designed to automate some useful git command without the need to
 use the web browser. Based on the [tentacles][] library with sensible default.
+You can simply create new Github repo with one simple command and one config file.
+TL;DR; `gh-utils --config ./Dropbox/private/config.edn --repo my-awesome-idea`
 
 ### Installation and usage as command line interface (CLI)
 
@@ -49,7 +51,7 @@ in already in the same directory that you are running this command then
 mkdir -p ~/codes/my-awesome-idea
 cd ~/codes/my-awesome-idea
 
-# Create the new Github repository of the name 'my-awesome-idea' in Github
+# Just run the command without any argument
 gh-utils
 ```
 
@@ -60,7 +62,7 @@ Now open `https//github.com/YOUR-GITHUB-ID/my-awesome-idea` in your browser.
 - Leiningen
 
 ```clj
-[org.clojars.agilecreativity/gh-utils "0.1.0"]
+[org.clojars.agilecreativity/gh-utils "0.1.1"]
 ```
 
 ### Links
@@ -69,10 +71,10 @@ Now open `https//github.com/YOUR-GITHUB-ID/my-awesome-idea` in your browser.
 - My [forked version](https://github.com/agilecreativity/tentacles) with newer version of [clj-http][]
 - Ways people are trying to address this issue on [Stack Overflow](http://stackoverflow.com/questions/2423777/is-it-possible-to-create-a-remote-repo-on-github-from-the-cli-without-opening-br)
 
-### TODOs
+### Roadmaps & TODOs
 
 - [ ] Add the intial commit with README.md file `touch README.md && git add README.md && git commit -m "Add README.md" && git push"`
-- [ ] Make sure we can load configuration from any directory e.g. `github-new-repo -c ../some/path/config.edn` should work
+- [ ] Allow override of default options like ':public', ':description', etc
 
 ### License
 
