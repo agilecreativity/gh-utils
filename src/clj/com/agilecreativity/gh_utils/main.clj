@@ -13,7 +13,7 @@
 (defn- load-config
   "Load config file from the config.edn file"
   [filename]
-  (edn/read-string (slurp filename)))
+  (edn/read-string (slurp (fs/normalized filename))))
 
 (defn- default-options [& options]
   "Define the sensible default options when creating new Github repository"
@@ -38,15 +38,19 @@
               username (:username config)
               password (:password config)
               auth (str username ":" password)]
-          (let [result (t-repos/create-repo reponame
+          (let [homepage (str "https://github.com/" reponame)
+                result (t-repos/create-repo reponame
                                             (default-options {:auth auth
                                                               :description (str reponame " by " username)
-                                                              :homepage (str "https://github.com/" reponame)}))]
-            ;; TODO: show the appropriate error if the repository already exist
-            (println "Your result : " result))))
+                                                              :homepage homepage}))]
+            ;; Give user feedback they needed
+            (if (:status result)
+              (println "Problem creating new repository, errors : " (get-in result [:body :errors]))
+              (println "You have succesfully created new repository at : " (:html_url result))))))
+
       ;; Handle any problem/exception that we may have
       (catch Exception e
-        (exit 1 (println (str "Error loading configuration file :" (.getMessage e))))))))
+        (exit 1 (println (str "Error loading configuration file: " (.getMessage e))))))))
 
 (defn -main [& args]
   (let [{:keys [options arguments errors summary]}
