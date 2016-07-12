@@ -26,8 +26,8 @@ lein bin
 
 #### Usage
 
-You will need to create the provide the credential in the the file called `config.edn`
-in the following format:
+You will need to create the simple [edn](https://github.com/edn-format/edn) configuration
+file. The file can have any name but the format must be something like:
 
 ```clj
 {:username "YOUR-GITHUB-ID"
