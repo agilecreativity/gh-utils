@@ -38,7 +38,7 @@
               username (:username config)
               password (:password config)
               auth (str username ":" password)]
-          (let [homepage (str "https://github.com/" reponame)
+          (let [homepage (str "https://github.com/" (clojure.string/join "/" (list username reponame)))
                 result (t-repos/create-repo reponame
                                             (default-options {:auth auth
                                                               :description (str reponame " by " username)
