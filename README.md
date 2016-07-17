@@ -1,6 +1,7 @@
 # gh-utils
 
 [![Clojars Project](https://img.shields.io/clojars/v/gh-utils.svg)](https://clojars.org/gh-utils)
+[![Dependencies Status](https://jarkeeper.com/agilecreativity/gh-utils/status.svg)](https://jarkeeper.com/agilecreativity/gh-utils)
 
 Clojure library designed to automate some useful git command without the need to
 use the web browser. Based on the [tentacles][] library with sensible default.
