@@ -10,6 +10,11 @@ TL;DR; `gh-utils --config ./Dropbox/private/config.edn --repo my-awesome-idea`
 
 ### Installation and usage as command line interface (CLI)
 
+#### Pre-requisites
+
+- [Java SDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+- [Leiningen](http://leiningen.org/#install)
+
 #### Installation
 
 ```sh
