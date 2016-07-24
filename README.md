@@ -6,7 +6,7 @@
 Clojure library designed to automate some useful git command without the need to
 use the web browser. Based on the [tentacles][] library with sensible default.
 You can simply create new Github repo with one simple command and one config file.
-TL;DR; `gh-utils --config ./Dropbox/private/config.edn --repo my-awesome-idea`
+TL;DR; `gh-utils --config ./Dropbox/github.edn --repo my-awesome-idea`
 
 ### Installation and usage as command line interface (CLI)
 
@@ -28,7 +28,7 @@ cd ~/projects/gh-utils
 # Create the `~/bin` folder to hold the executable
 mkdir -p ~/bin
 
-# Generate the standalone using `lein bin`
+# Generate the standalone binary using `lein bin`
 lein bin
 ```
 
@@ -36,6 +36,8 @@ lein bin
 
 You will need to create the simple [edn](https://github.com/edn-format/edn) configuration
 file. The file can have any name but the format must be something like:
+
+I personally store this config file in the following location `~/Dropbox/github.edn`
 
 ```clj
 {:username "YOUR-GITHUB-ID"
@@ -46,10 +48,10 @@ file. The file can have any name but the format must be something like:
 
 ```sh
 # The long version
-gh-utils --config config.edn --repo my-awesome-idea
+gh-utils --config ~/Dropbox/github.edn --repo my-awesome-idea
 
 # Or shorter version
-gh-utils -c config.edn -r my-awesome-idea
+gh-utils -c ~/Dropbox/github.edn -r my-awesome-idea
 ```
 
 - If you already inside the root directory of the project and the file `config.edn` is
@@ -73,17 +75,20 @@ Now open `https//github.com/YOUR-GITHUB-ID/my-awesome-idea` in your browser.
 [org.clojars.agilecreativity/gh-utils "0.1.1"]
 ```
 
-### Links
+### Related Links
 
 - The original [tentacles](http://raynes.github.io/tentacles/) documentation
-- My [forked version](https://github.com/agilecreativity/tentacles) with newer version of [clj-http][]
+- My [forked version][] of tentacles library with newer version of [clj-http][]
 - Ways people are trying to address this issue on [Stack Overflow](http://stackoverflow.com/questions/2423777/is-it-possible-to-create-a-remote-repo-on-github-from-the-cli-without-opening-br)
+- [clojure.core/re-pattern](https://clojuredocs.org/clojure.core/re-pattern)
+- [clojure.core/replace](https://clojuredocs.org/clojure.string/replace)
 
 ### Roadmaps & TODOs
 
 - [ ] Add the intial commit with README.md file `touch README.md && git add README.md && git commit -m "Add README.md" && git push"`
 - [ ] Allow override of default options like ':public', ':description', etc
 - [ ] Make use of [clj-jgit](https://github.com/clj-jgit/clj-jgit)
+
 ### License
 
 Copyright © 2016 Burin Choomnuan
@@ -95,3 +100,4 @@ your option) any later version.
 
 [tentacles]: http://github.com/Raynes/tentacles.git
 [clj-http]: https://github.com/dakrone/clj-http
+[forked version]: https://github.com/agilecreativity/tentacles.git

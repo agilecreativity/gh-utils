@@ -4,9 +4,18 @@ All notable changes to this project will be documented in this file. This change
 
 ## [Unreleased]
 
-### Fixed
+- N/A
 
-- Improve some documentation and fix change logs
+## [0.1.2] - 2016-07-24
+
+### Changed
+
+- Read default configuration file from `~/Dropbox/github.edn`
+- Improve documentation and fix change logs
+
+### Added
+
+- Show `git remote add origin https://github.com/USER/new-repo.git`
 
 ## [0.1.1] - 2016-07-11
 
@@ -24,5 +33,6 @@ All notable changes to this project will be documented in this file. This change
 
 - Initial working version
 
-[Unreleased]: https://github.com/agilecreativity/gh-utils/compare/0.1.1...HEAD
+[Unreleased]: https://github.com/agilecreativity/gh-utils/compare/0.1.2...HEAD
+[0.1.2]: https://github.com/agilecreativity/gh-utils/compare/0.1.1...0.1.2
 [0.1.1]: https://github.com/agilecreativity/gh-utils/compare/0.1.0...0.1.1
