@@ -55,9 +55,10 @@
                       https-url (str origin-prefix url ".git")
                       ssh-url (-> https-url
                                   (clojure.string/replace-first #"https://github.com/" "git@github.com:"))]
-                  (println "You have succesfully created new repository at : " url)
-                  (println "You can track this repository with (https) : " https-url)
-                  (println "You can track this repository with (ssh)   : " ssh-url)))))))
+
+                  (println (str "You have succesfully created new repository at : " url)
+                           (str "\nYou can track this repository with (https) : " https-url)
+                           (str "\nYou can track this repository with (ssh)   : " ssh-url))))))))
 
       ;; Handle any problem/exception that we may have
       (catch Exception e
