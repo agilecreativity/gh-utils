@@ -12,7 +12,7 @@
         :bootclasspath true}
   :plugins [[lein-bin "0.3.4"]
             [lein-cljfmt "0.5.3"]]
-  :dependencies [[org.clojure/clojure "1.8.0"]
+  :dependencies [[org.clojure/clojure "1.9.0-alpha13"]
                  [org.clojure/tools.cli "0.3.5"]
                  ;; NOTE: this is a workaround until
                  ;; as [the origin pr](https://github.com/Raynes/tentacles/pull/91) is

@@ -2,7 +2,6 @@
 <classpath>
   <classpathentry kind="src" path="test" output="target/test-classes" including="**/*.java"/>
   <classpathentry kind="src" path="src/clj" including="**/*.java"/>
-  <classpathentry kind="src" path="src/java" including="**/*.java"/>
   <classpathentry kind="output" path="target/classes"/>
   <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
   <classpathentry kind="var" path="M2_REPO/org/clojure/clojure/1.8.0/clojure-1.8.0.jar" sourcepath="M2_REPO/org/clojure/clojure/1.8.0/clojure-1.8.0-sources.jar"/>
