@@ -1,28 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-  <classpathentry kind="src" path="test" output="target/test-classes" including="**/*.java"/>
-  <classpathentry kind="src" path="src/clj" including="**/*.java"/>
+  <classpathentry kind="src" path="src/test/clj" output="target/test-classes" including="**/*.java"/>
+  <classpathentry kind="src" path="src/main/clj" including="**/*.java"/>
   <classpathentry kind="output" path="target/classes"/>
   <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
   <classpathentry kind="var" path="M2_REPO/org/clojure/clojure/1.8.0/clojure-1.8.0.jar" sourcepath="M2_REPO/org/clojure/clojure/1.8.0/clojure-1.8.0-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/clojure/tools.cli/0.3.5/tools.cli-0.3.5.jar" sourcepath="M2_REPO/org/clojure/tools.cli/0.3.5/tools.cli-0.3.5-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/clojars/agilecreativity/tentacles/0.5.2/tentacles-0.5.2.jar"/>
-  <classpathentry kind="var" path="M2_REPO/clj-http/clj-http/2.0.1/clj-http-2.0.1.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpcore/4.4.1/httpcore-4.4.1.jar" sourcepath="M2_REPO/org/apache/httpcomponents/httpcore/4.4.1/httpcore-4.4.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpclient/4.5/httpclient-4.5.jar" sourcepath="M2_REPO/org/apache/httpcomponents/httpclient/4.5/httpclient-4.5-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/encrypted-config/encrypted-config/0.1.1/encrypted-config-0.1.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/crypto-random/crypto-random/1.2.0/crypto-random-1.2.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-codec/commons-codec/1.6/commons-codec-1.6.jar" sourcepath="M2_REPO/commons-codec/commons-codec/1.6/commons-codec-1.6-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/buddy/buddy/1.3.0/buddy-1.3.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/buddy/buddy-core/1.2.0/buddy-core-1.2.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/bouncycastle/bcprov-jdk15on/1.56/bcprov-jdk15on-1.56.jar" sourcepath="M2_REPO/org/bouncycastle/bcprov-jdk15on/1.56/bcprov-jdk15on-1.56-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/bouncycastle/bcpkix-jdk15on/1.56/bcpkix-jdk15on-1.56.jar" sourcepath="M2_REPO/org/bouncycastle/bcpkix-jdk15on/1.56/bcpkix-jdk15on-1.56-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/buddy/buddy-auth/1.4.0/buddy-auth-1.4.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/buddy/buddy-sign/1.4.0/buddy-sign-1.4.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/cheshire/cheshire/5.6.3/cheshire-5.6.3.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.7.5/jackson-core-2.7.5.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.7.5/jackson-core-2.7.5-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.7.5/jackson-dataformat-smile-2.7.5.jar" sourcepath="M2_REPO/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.7.5/jackson-dataformat-smile-2.7.5-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/dataformat/jackson-dataformat-cbor/2.7.5/jackson-dataformat-cbor-2.7.5.jar" sourcepath="M2_REPO/com/fasterxml/jackson/dataformat/jackson-dataformat-cbor/2.7.5/jackson-dataformat-cbor-2.7.5-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/tigris/tigris/0.1.1/tigris-0.1.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/funcool/cuerdas/2.0.2/cuerdas-2.0.2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/clout/clout/2.1.2/clout-2.1.2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/instaparse/instaparse/1.4.0/instaparse-1.4.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/buddy/buddy-hashers/1.2.0/buddy-hashers-1.2.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/clojurewerkz/scrypt/1.2.0/scrypt-1.2.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/lambdaworks/scrypt/1.4.0/scrypt-1.4.0.jar" sourcepath="M2_REPO/com/lambdaworks/scrypt/1.4.0/scrypt-1.4.0-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/github/raynes/tentacles/master/tentacles-master.jar"/>
+  <classpathentry kind="var" path="M2_REPO/clj-http/clj-http/3.1.0/clj-http-3.1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpcore/4.4.4/httpcore-4.4.4.jar" sourcepath="M2_REPO/org/apache/httpcomponents/httpcore/4.4.4/httpcore-4.4.4-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpclient/4.5.2/httpclient-4.5.2.jar" sourcepath="M2_REPO/org/apache/httpcomponents/httpclient/4.5.2/httpclient-4.5.2-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.2/commons-logging-1.2.jar" sourcepath="M2_REPO/commons-logging/commons-logging/1.2/commons-logging-1.2-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/commons-codec/commons-codec/1.10/commons-codec-1.10.jar" sourcepath="M2_REPO/commons-codec/commons-codec/1.10/commons-codec-1.10-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpmime/4.5/httpmime-4.5.jar" sourcepath="M2_REPO/org/apache/httpcomponents/httpmime/4.5/httpmime-4.5-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpmime/4.5.2/httpmime-4.5.2.jar" sourcepath="M2_REPO/org/apache/httpcomponents/httpmime/4.5.2/httpmime-4.5.2-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/commons-io/commons-io/2.4/commons-io-2.4.jar" sourcepath="M2_REPO/commons-io/commons-io/2.4/commons-io-2.4-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/slingshot/slingshot/0.12.2/slingshot-0.12.2.jar"/>
-  <classpathentry kind="var" path="M2_REPO/potemkin/potemkin/0.4.1/potemkin-0.4.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/potemkin/potemkin/0.4.3/potemkin-0.4.3.jar"/>
   <classpathentry kind="var" path="M2_REPO/clj-tuple/clj-tuple/0.2.2/clj-tuple-0.2.2.jar"/>
-  <classpathentry kind="var" path="M2_REPO/riddley/riddley/0.1.10/riddley-0.1.10.jar"/>
-  <classpathentry kind="var" path="M2_REPO/cheshire/cheshire/5.4.0/cheshire-5.4.0.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.4.4/jackson-core-2.4.4.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.4.4/jackson-core-2.4.4-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.4.4/jackson-dataformat-smile-2.4.4.jar" sourcepath="M2_REPO/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.4.4/jackson-dataformat-smile-2.4.4-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/dataformat/jackson-dataformat-cbor/2.4.4/jackson-dataformat-cbor-2.4.4.jar" sourcepath="M2_REPO/com/fasterxml/jackson/dataformat/jackson-dataformat-cbor/2.4.4/jackson-dataformat-cbor-2.4.4-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/tigris/tigris/0.1.1/tigris-0.1.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/riddley/riddley/0.1.12/riddley-0.1.12.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/cemerick/url/0.1.1/url-0.1.1.jar"/>
   <classpathentry kind="var" path="M2_REPO/pathetic/pathetic/0.5.0/pathetic-0.5.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/cemerick/clojurescript.test/0.0.4/clojurescript.test-0.0.4.jar"/>
@@ -40,9 +54,16 @@
   <classpathentry kind="var" path="M2_REPO/org/clojure/google-closure-library-third-party/0.0-2029-2/google-closure-library-third-party-0.0-2029-2.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/mozilla/rhino/1.7R4/rhino-1.7R4.jar" sourcepath="M2_REPO/org/mozilla/rhino/1.7R4/rhino-1.7R4-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/clojure/data.codec/0.1.0/data.codec-0.1.0.jar" sourcepath="M2_REPO/org/clojure/data.codec/0.1.0/data.codec-0.1.0-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/environ/environ/1.0.0/environ-1.0.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/environ/environ/1.1.0/environ-1.1.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/me/raynes/fs/1.4.6/fs-1.4.6.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/commons/commons-compress/1.8/commons-compress-1.8.jar" sourcepath="M2_REPO/org/apache/commons/commons-compress/1.8/commons-compress-1.8-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/tukaani/xz/1.5/xz-1.5.jar" sourcepath="M2_REPO/org/tukaani/xz/1.5/xz-1.5-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/clj-jgit/clj-jgit/0.8.9/clj-jgit-0.8.9.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jgit/org.eclipse.jgit.java7/3.7.0.201502260915-r/org.eclipse.jgit.java7-3.7.0.201502260915-r.jar" sourcepath="M2_REPO/org/eclipse/jgit/org.eclipse.jgit.java7/3.7.0.201502260915-r/org.eclipse.jgit.java7-3.7.0.201502260915-r-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jgit/org.eclipse.jgit/3.7.0.201502260915-r/org.eclipse.jgit-3.7.0.201502260915-r.jar" sourcepath="M2_REPO/org/eclipse/jgit/org.eclipse.jgit/3.7.0.201502260915-r/org.eclipse.jgit-3.7.0.201502260915-r-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/googlecode/javaewah/JavaEWAH/0.7.9/JavaEWAH-0.7.9.jar" sourcepath="M2_REPO/com/googlecode/javaewah/JavaEWAH/0.7.9/JavaEWAH-0.7.9-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.7.2/slf4j-api-1.7.2.jar" sourcepath="M2_REPO/org/slf4j/slf4j-api/1.7.2/slf4j-api-1.7.2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/fs/fs/1.3.2/fs-1.3.2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/jcraft/jsch/0.1.53/jsch-0.1.53.jar" sourcepath="M2_REPO/com/jcraft/jsch/0.1.53/jsch-0.1.53-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/lein-bin/lein-bin/0.3.4/lein-bin-0.3.4.jar"/>
 </classpath>

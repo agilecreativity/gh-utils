@@ -6,6 +6,13 @@ All notable changes to this project will be documented in this file. This change
 
 - N/A
 
+## [0.2.0] - 2016-03-05
+
+### Added
+
+- Allow the creation of initial commit and push to remote branch
+- Minor APIs cleanup
+
 ## [0.1.2] - 2016-07-24
 
 ### Changed
@@ -33,6 +40,7 @@ All notable changes to this project will be documented in this file. This change
 
 - Initial working version
 
-[Unreleased]: https://github.com/agilecreativity/gh-utils/compare/0.1.2...HEAD
+[Unreleased]: https://github.com/agilecreativity/gh-utils/compare/0.2.0...HEAD
+[0.2.0]: https://github.com/agilecreativity/gh-utils/compare/0.1.2...0.2.0
 [0.1.2]: https://github.com/agilecreativity/gh-utils/compare/0.1.1...0.1.2
 [0.1.1]: https://github.com/agilecreativity/gh-utils/compare/0.1.0...0.1.1

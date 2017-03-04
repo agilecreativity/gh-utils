@@ -1,6 +1,5 @@
 (ns com.agilecreativity.gh_utils.option
-  (:require [clojure.string :as string])
-  (:gen-class))
+  (:require [clojure.string :as string]))
 
 (def default-config "~/Dropbox/github.edn")
 

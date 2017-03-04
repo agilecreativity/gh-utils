@@ -72,7 +72,7 @@ Now open `https//github.com/YOUR-GITHUB-ID/my-awesome-idea` in your browser.
 - Leiningen
 
 ```clj
-[org.clojars.agilecreativity/gh-utils "0.1.1"]
+[org.clojars.agilecreativity/gh-utils "0.2.0"]
 ```
 
 ### Related Links
@@ -85,13 +85,13 @@ Now open `https//github.com/YOUR-GITHUB-ID/my-awesome-idea` in your browser.
 
 ### Roadmaps & TODOs
 
-- [ ] Add the intial commit with README.md file `touch README.md && git add README.md && git commit -m "Add README.md" && git push"`
+- [x] Add the intial commit with README.md file `touch README.md && git add README.md && git commit -m "Add README.md" && git push"`
+- [x] Make use of [clj-jgit](https://github.com/clj-jgit/clj-jgit)
 - [ ] Allow override of default options like ':public', ':description', etc
-- [ ] Make use of [clj-jgit](https://github.com/clj-jgit/clj-jgit)
 
 ### License
 
-Copyright © 2016 Burin Choomnuan
+Copyright © 2016-2017 Burin Choomnuan
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
