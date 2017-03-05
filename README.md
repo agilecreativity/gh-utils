@@ -6,7 +6,7 @@
 Clojure library designed to automate some useful git command without the need to
 use the web browser. Based on the [tentacles][] library with sensible default.
 You can simply create new Github repo with one simple command and one config file.
-TL;DR; `gh-utils --config ./Dropbox/github.edn --repo my-awesome-idea`
+TL;DR; `gh-utils --config ./Dropbox/github.edn --repo my-awesome-idea --push`
 
 ### Installation and usage as command line interface (CLI)
 
@@ -83,7 +83,7 @@ Now open `https//github.com/YOUR-GITHUB-ID/my-awesome-idea` in your browser.
 ### Related Links
 
 - The original [tentacles](http://raynes.github.io/tentacles/) documentation
-- My [forked version][] of tentacles library with newer version of [clj-http][]
+- ~~My [forked version][] of tentacles library with newer version of [clj-http][]~~
 - Ways people are trying to address this issue on [Stack Overflow](http://stackoverflow.com/questions/2423777/is-it-possible-to-create-a-remote-repo-on-github-from-the-cli-without-opening-br)
 - [clojure.core/re-pattern](https://clojuredocs.org/clojure.core/re-pattern)
 - [clojure.core/replace](https://clojuredocs.org/clojure.string/replace)
