@@ -6,6 +6,7 @@
 (def options
   [["-c" "--config CONFIG" :default default-config]
    ["-r" "--repo REPO"]
+   ["-p" "--push"]
    ["-h" "--help"]])
 
 (defn usage [options-summary]
@@ -17,6 +18,7 @@
         ""
         "--config CONFIG full path to the config file e.g. ~/Dropbox/github.edn"
         "--repo   REPO   name of repository to be created"
+        "--push          push the code to the remote repository as well"
         ""]
        (string/join \newline)))
 

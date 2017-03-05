@@ -39,10 +39,9 @@
             ssh-url (-> https-url
                         ;; Convert https:// to git@
                         (clojure.string/replace-first #"https://github.com/" "git@github.com:"))]
-        ;; TODO: may be add the options to push the commit to Github
         (println (str "You have succesfully created new repository at : " url)
-                 (str "\nYou can track this repository with (https) : " https-url)
-                 (str "\nYou can track this repository with (ssh)   : " ssh-url))))))
+                 (str "\nYou can track this repository with (https)     : " https-url)
+                 (str "\nYou can track this repository with (ssh)       : " ssh-url))))))
 
 (defn create-new-repo!
   "Create new repository using the given options"
@@ -66,20 +65,20 @@
                                                               :homepage homepage}))]
             (check-and-confirm-result result)
 
-            ;; Now we are ready to add remote and push it upstream
             (let [base-dir (fs/file ".")]
-             (hlp/git-init-and-add-remote username
-                                          reponame
-                                          base-dir
-                                          "origin")
-             (hlp/git-push-remote base-dir)))))
+              ;; Add tracking to remote repository
+              (hlp/git-init-and-add-remote username
+                                           reponame
+                                           base-dir
+                                           "origin")
+             ;; Push the change to remote if the user pass in the option --push or -p
+             (if (:push options) (hlp/git-push-remote base-dir))))))
 
       ;; Handle any problem/exception that we may have
       (catch Exception e
         (exit 1 (println (str "Error loading configuration file: " (.getMessage e))))))))
 
 (defn -main [& args]
-  (println (str "Your dir:" (fs/file ".")))
   (let [{:keys [options arguments errors summary]}
          (cli/parse-opts args opt/options)]
      (cond
