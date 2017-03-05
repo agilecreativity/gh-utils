@@ -39,8 +39,7 @@
             ssh-url (-> https-url
                         ;; Convert https:// to git@
                         (clojure.string/replace-first #"https://github.com/" "git@github.com:"))]
-        (println (str "You have succesfully created new repository at : " url)
-                 (str "\nIt is setup to track remote branch at          : " ssh-url))))))
+        (println (str "You have succesfully created new repository at : " url))))))
 
 (defn create-new-repo!
   "Create new repository using the given options"
@@ -64,15 +63,21 @@
                                                               :homepage homepage}))]
             (check-and-confirm-result result)
 
-            (let [base-dir (fs/file ".")]
-              ;; Add tracking to remote repository
-              (hlp/git-init-and-add-remote username
-                                           reponame
-                                           base-dir
-                                           "origin")
-             ;; Push the change to remote if the user pass in the option --push or -p
-              (if (:push options)
-                (hlp/git-push-remote base-dir)
+            ;; Make sure that we are running from the right directory
+            (let [base-dir (fs/file ".")
+                  {:keys [init-commit
+                          remote-label
+                          push]} options]
+              ;; Run git init && git commit command only if the user ask for it
+              (if init-commit (hlp/git-init-commit base-dir))
+
+              ;; We always add remote tracking
+              (hlp/git-add-remote username reponame base-dir remote-label)
+
+              ;; Run git push only if the user specify '--push' option.
+              (if push
+                ;; Note: default push to master branch, may be add options to allow to push to different branch?
+                (hlp/git-push-remote base-dir remote-label "master")
                 (println "FYI: commit exist locally, but no git push is perform. You may run git push manually to publish your changes."))))))
 
       ;; Handle any problem/exception that we may have
@@ -81,9 +86,9 @@
 
 (defn -main [& args]
   (let [{:keys [options arguments errors summary]}
-         (cli/parse-opts args opt/options)]
-     (cond
-       (:help options)
-       (exit 0 (usage summary))
-       (:config options)
-       (create-new-repo! options))))
+        (cli/parse-opts args opt/options)]
+    (cond
+      (:help options)
+      (exit 0 (usage summary))
+      (:config options)
+      (create-new-repo! options))))

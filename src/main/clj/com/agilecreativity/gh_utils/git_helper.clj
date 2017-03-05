@@ -17,21 +17,11 @@
   ([username project-name base-dir]
    (git-add-remote username project-name base-dir "origin"))
   ([username project-name base-dir remote-label]
-   ;; Then add tracking branch to remote branch we created or will be created later
-   ;; e.g. git remote add <origin|upstream> git@github.com:<username>/<project-name>.git
    (let [{:keys [exit out err]}
          (shell/sh "git" "remote" "add"
                    remote-label ;; "upstream" or "origin"
                    (str "git@github.com:" username "/" project-name ".git")
                    :dir base-dir)])))
-
-(defn git-init-and-add-remote
-  "Run git init followed by git add remote tracking branch to a given project."
-  ([username project-name base-dir remote-label]
-   (git-init-commit base-dir)
-   (git-add-remote username project-name base-dir remote-label))
-  ([username project-name base-dir]
-   (git-init-and-add-remote username project-name base-dir "origin")))
 
 (defn git-push-remote
   "Run git push send changes to remote repository.
@@ -44,7 +34,7 @@ e.g. git push --set-upstream <origin|upstream> <master|branch-name>"
    (git-push-remote base-dir remote-label "master"))
   ([base-dir remote-label branch-name]
    (fs/file base-dir)
-   ;; git push --set-upstream origin branch-name
+   ;; e.g. git push --set-upstream <origin|upstream> branch-name
    (let [{:keys [exit out err]}
          (shell/sh "git" "push" "--set-upstream"
                    remote-label

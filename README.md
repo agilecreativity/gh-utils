@@ -32,6 +32,39 @@ mkdir -p ~/bin
 lein bin
 ```
 
+Once this is done you should be able to just run the command to see basic usage:
+
+```
+Create new Github's project from a command line
+
+Usage: gh-utils [options]
+  -c, --config CONFIG              ~/Dropbox/github.edn
+  -r, --repo REPO
+  -i, --init-commit
+  -l, --remote-label REMOTE_LABEL  origin
+  -p, --push
+  -h, --help
+
+Options:
+
+--config       CONFIG       full path to the config file e.g. ~/Dropbox/github.edn
+--init-commit               run git-init and git commit on the local project
+--repo         REPO         name of repository to be created
+--remote-label REMOTE_LABEL remote label default to 'origin'
+--push                      push the code to the remote repository as well
+
+Examples:
+
+a) To push existing project that have already contain some commit (e.g. skip -i)
+$gh-utils -c ~/Dropbox/github.edn -r awesome-idea -l upstream -p
+
+b) To create and push brand new project to Github and run initial commit
+$gh-utils -c ~/Dropbox/github.edn -r awesome-idea -i -l origin -p
+
+c) To create brand new project to Github, run initial commit and skip pushing to remote branch.
+$gh-utils -c ~/Dropbox/github.edn -r awesome-idea -i -l origin
+```
+
 #### Usage
 
 You will need to create the simple [edn](https://github.com/edn-format/edn) configuration
