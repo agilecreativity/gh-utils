@@ -40,8 +40,7 @@
                         ;; Convert https:// to git@
                         (clojure.string/replace-first #"https://github.com/" "git@github.com:"))]
         (println (str "You have succesfully created new repository at : " url)
-                 (str "\nYou can track this repository with (https)     : " https-url)
-                 (str "\nYou can track this repository with (ssh)       : " ssh-url))))))
+                 (str "\nIt is setup to track remote branch at          : " ssh-url))))))
 
 (defn create-new-repo!
   "Create new repository using the given options"
@@ -72,7 +71,9 @@
                                            base-dir
                                            "origin")
              ;; Push the change to remote if the user pass in the option --push or -p
-             (if (:push options) (hlp/git-push-remote base-dir))))))
+              (if (:push options)
+                (hlp/git-push-remote base-dir)
+                (println "FYI: commit exist locally, but no git push is perform. You may run git push manually to publish your changes."))))))
 
       ;; Handle any problem/exception that we may have
       (catch Exception e

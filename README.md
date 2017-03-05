@@ -63,6 +63,11 @@ cd ~/codes/my-awesome-idea
 
 # Just run the command without any argument
 gh-utils
+
+# To create your repository in Github and push your changes to remote branch try
+gh-utils -c ~/path/to/github-config.edn -r my-awesome-id -p
+
+# Note without supplying -p the repository will be created remotely without initial git push
 ```
 
 Now open `https//github.com/YOUR-GITHUB-ID/my-awesome-idea` in your browser.
