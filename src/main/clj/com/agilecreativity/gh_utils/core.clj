@@ -20,9 +20,9 @@
 
 (defn- default-options [& options]
   "Define the sensible default options when creating new Github repository"
-  (let [opts (merge {:public false
-                     :has-issue false
-                     :has-wiki false
+  (let [opts (merge {:public       false
+                     :has-issue    false
+                     :has-wiki     false
                      :has-download false}
                     (first options))]
     opts))
@@ -33,41 +33,43 @@
   (if (:status result)
     (println "Problem creating new repository, errors : " (get-in result [:body :errors]))
     (do
-      (let [url (:html_url result)
+      (let [url           (:html_url result)
             origin-prefix "git remote add origin "
-            https-url (str origin-prefix url ".git")
-            ssh-url (-> https-url
-                        ;; Convert https:// to git@
-                        (clojure.string/replace-first #"https://github.com/" "git@github.com:"))]
+            https-url     (str origin-prefix url ".git")
+            ssh-url       (-> https-url
+                              ;; Convert https:// to git@
+                              (clojure.string/replace-first #"https://github.com/" "git@github.com:"))]
         (println (str "You have succesfully created new repository at : " url))))))
 
 (defn create-new-repo!
   "Create new repository using the given options"
   [options]
   (let [config-options (:config options)
-        repo-options (:repo options)]
+        repo-options   (:repo options)]
     (try
       (if-let [config (load-config config-options)]
+        ;; TODO: don't create the repo from the parent directory!!!
         ;; Now check for repo name at this point
         (let [reponame (if repo-options
                          repo-options
-                         (fs/base-name (fs/parent config-options)))
+                         (fs/base-name (fs/parent config-options))) ;; TODO: remove this option make them explicit
               username (:username config)
               password (:password config)
-              auth (str username ":" password)]
+              auth     (str username ":" password)]
           (let [github-prefix "https://github.com/"
-                homepage (str github-prefix (clojure.string/join "/" (list username reponame)))
-                result (t-repos/create-repo reponame
-                                            (default-options {:auth auth
-                                                              :description (str reponame " by " username)
-                                                              :homepage homepage}))]
+                homepage      (str github-prefix (clojure.string/join "/" (list username reponame)))
+                result        (t-repos/create-repo reponame
+                                                   (default-options {:auth        auth
+                                                                     :description (str reponame " by " username)
+                                                                     :homepage    homepage}))]
             (check-and-confirm-result result)
 
             ;; Make sure that we are running from the right directory
-            (let [base-dir (fs/file ".")
+            (let [base-dir       (fs/file ".")
                   {:keys [init-commit
                           remote-label
                           push]} options]
+
               ;; Run git init && git commit command only if the user ask for it
               (if init-commit (hlp/git-init-commit base-dir))
 
@@ -90,5 +92,9 @@
     (cond
       (:help options)
       (exit 0 (usage summary))
+
       (:config options)
-      (create-new-repo! options))))
+      ;;(println "FYI: options " options)
+      (create-new-repo! options)
+
+      :else (exit 0 (usage summary)))))
