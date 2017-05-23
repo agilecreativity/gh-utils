@@ -8,7 +8,9 @@
   :source-paths ["src/main/clj"]
   :test-paths ["src/test/clj"]
   :bin {:name          "gh-utils"
+        ;; Note: this might not be portable on Windows, may be ignore it
         :bin-path      "~/bin"
+        ;; Note: comment out this line, to make it works better on Windows
         :bootclasspath true}
   :plugins [[lein-bin "0.3.5"]
             [lein-cljfmt "0.5.6"]
