@@ -4,7 +4,7 @@
   :license {:name "Eclipse Public License"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :profiles {:dev     {:dependencies [[lein-bin "0.3.5"]]}
-             :uberjar { :aot :all }}
+             :uberjar {:aot :all}}
   :source-paths ["src/main/clj"]
   :test-paths ["src/test/clj"]
   :bin {:name          "gh-utils"
