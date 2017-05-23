@@ -25,7 +25,7 @@
 
 (defn git-push-remote
   "Run git push send changes to remote repository.
-e.g. git push --set-upstream <origin|upstream> <master|branch-name>"
+  e.g. git push --set-upstream <origin|upstream> <master|branch-name>"
   ([]
    (git-push-remote "." "origin" "master"))
   ([base-dir]
