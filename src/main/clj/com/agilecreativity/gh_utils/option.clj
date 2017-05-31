@@ -1,12 +1,12 @@
 (ns com.agilecreativity.gh_utils.option
   (:require [clojure.string :as string]))
 
-(def default-config "~/Dropbox/github.edn")
+;;(def default-config "~/Dropbox/github.edn")
 
 (def default-remote-label "origin")
 
 (def options
-  [["-c" "--config CONFIG" :default default-config]
+  [["-c" "--config CONFIG"]
    ["-r" "--repo REPO"]
    ["-i" "--init-commit"]
    ["-l" "--remote-label REMOTE_LABEL" :default default-remote-label ]

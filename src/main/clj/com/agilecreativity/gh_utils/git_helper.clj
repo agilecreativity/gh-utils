@@ -3,13 +3,21 @@
             [clojure.java.shell :as shell]
             [me.raynes.fs :as fs]))
 
-(defn git-init-commit
+(defn git-init-commit-cjp
   "Run initial git commit on a given directory."
   [base-dir]
   (let [git-repo (cjp/git-init base-dir)]
     (cjp/git-add git-repo ".")
     (cjp/git-commit git-repo "Initial commit")
     (cjp/git-status git-repo)))
+
+(defn git-init-commit
+  "Run initial git commit on a given directory."
+  [base-dir]
+  (fs/chdir base-dir)
+  (shell/sh "git init .")
+  (shell/sh "git add --all .")
+  (shell/sh "git commit -am \"Initial commit\""))
 
 (defn git-add-remote
   "Run `git remote add origin git@github.com:username/project.git' on the current project.

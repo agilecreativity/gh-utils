@@ -94,7 +94,6 @@
       (exit 0 (usage summary))
 
       (:config options)
-      ;;(println "FYI: options " options)
       (create-new-repo! options)
 
       :else (exit 0 (usage summary)))))
