@@ -1,4 +1,4 @@
-(defproject gh-utils "0.2.2"
+(defproject gh-utils "0.3.0"
   :description "Create new Github repository from the comfort of your command line; TL;DR; $gh-utils --config ~/Dropbox/github.edn --repo my-awesome-idea"
   :url "https://github.com/agilecreativity/gh-utils"
   :license {:name "Eclipse Public License"

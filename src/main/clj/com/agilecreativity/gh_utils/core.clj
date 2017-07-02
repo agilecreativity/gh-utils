@@ -45,7 +45,7 @@
   "Create new repository using the given options"
   [options]
   (let [config-options (:config options)
-        reponame   (:repo options)]
+        reponame (:repo options)]
     (try
       (if-let [config (load-config config-options)]
         (let [username (:username config)
