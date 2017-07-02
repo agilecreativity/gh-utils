@@ -9,7 +9,7 @@
   [["-c" "--config CONFIG"]
    ["-r" "--repo REPO"]
    ["-i" "--init-commit"]
-   ["-l" "--remote-label REMOTE_LABEL" :default default-remote-label ]
+   ["-l" "--remote-label REMOTE_LABEL" :default default-remote-label]
    ["-p" "--push"]
    ["-h" "--help"]])
 

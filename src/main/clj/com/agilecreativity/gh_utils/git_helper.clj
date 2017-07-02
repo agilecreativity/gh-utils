@@ -11,13 +11,17 @@
     (cjp/git-commit git-repo "Initial commit")
     (cjp/git-status git-repo)))
 
+#_(fs/exists? (-> "~/Dropbox/login/github/agilecreativity.edn"
+                  fs/expand-home
+                  fs/normalized))
 (defn git-init-commit
   "Run initial git commit on a given directory."
   [base-dir]
-  (fs/chdir base-dir)
-  (shell/sh "git init .")
-  (shell/sh "git add --all .")
-  (shell/sh "git commit -am \"Initial commit\""))
+  (println "FYI: your current working directory: " (System/getProperty "user.dir"))
+  ;;(fs/chdir base-dir)
+  (shell/sh "git" "init" ".")
+  (shell/sh "git" "add" "--all" ".")
+  (shell/sh "git" "commit" "-m" "Initial commit"))
 
 (defn git-add-remote
   "Run `git remote add origin git@github.com:username/project.git' on the current project.
@@ -43,6 +47,7 @@
   ([base-dir remote-label branch-name]
    (fs/file base-dir)
    ;; e.g. git push --set-upstream <origin|upstream> branch-name
+   (println "FYI: about to run git push to remote server")
    (let [{:keys [exit out err]}
          (shell/sh "git" "push" "--set-upstream"
                    remote-label
