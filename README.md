@@ -126,6 +126,7 @@ Now open `https//github.com/YOUR-GITHUB-ID/my-awesome-idea` in your browser.
 - [x] Add the intial commit with README.md file `touch README.md && git add README.md && git commit -m "Add README.md" && git push"`
 - [x] Make use of [clj-jgit](https://github.com/clj-jgit/clj-jgit)
 - [ ] Allow override of default options like ':public', ':description', etc
+- [ ] Use newer version of [tentacles](https://clojars.org/irresponsible/tentacles)
 
 ### License
 
