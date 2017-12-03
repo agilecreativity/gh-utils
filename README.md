@@ -110,7 +110,7 @@ Now open `https//github.com/YOUR-GITHUB-ID/my-awesome-idea` in your browser.
 - Leiningen
 
 ```clj
-[org.clojars.agilecreativity/gh-utils "0.2.0"]
+[org.clojars.agilecreativity/gh-utils "0.3.1"]
 ```
 
 ### Related Links
@@ -125,8 +125,8 @@ Now open `https//github.com/YOUR-GITHUB-ID/my-awesome-idea` in your browser.
 
 - [x] Add the intial commit with README.md file `touch README.md && git add README.md && git commit -m "Add README.md" && git push"`
 - [x] Make use of [clj-jgit](https://github.com/clj-jgit/clj-jgit)
+- [x] Use newer version of [tentacles](https://clojars.org/irresponsible/tentacles)
 - [ ] Allow override of default options like ':public', ':description', etc
-- [ ] Use newer version of [tentacles](https://clojars.org/irresponsible/tentacles)
 
 ### License
 

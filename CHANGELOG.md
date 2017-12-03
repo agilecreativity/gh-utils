@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file. This change
 
 - N/A
 
+## [0.3.1] - 2017-12-01
+
+- Use maintained version of `tentacles` library
+- Bump version
+- Update project dependencies
+
 ## [0.3.0] - 2017-07-02
 
 ### Change
@@ -54,7 +60,8 @@ All notable changes to this project will be documented in this file. This change
 
 - Initial working version
 
-[Unreleased]: https://github.com/agilecreativity/gh-utils/compare/0.3.0...HEAD
+[Unreleased]: https://github.com/agilecreativity/gh-utils/compare/0.3.1...HEAD
+[0.3.1]: https://github.com/agilecreativity/gh-utils/compare/0.3.0...0.3.1
 [0.3.0]: https://github.com/agilecreativity/gh-utils/compare/0.3.0...0.2.1
 [0.2.1]: https://github.com/agilecreativity/gh-utils/compare/0.2.0...0.2.1
 [0.2.0]: https://github.com/agilecreativity/gh-utils/compare/0.1.2...0.2.0
