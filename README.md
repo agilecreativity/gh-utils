@@ -77,33 +77,38 @@ I personally store this config file in the following location `~/Dropbox/github.
  :password "YOUR-GITHUB-PASSWORD"}
 ```
 
-- To create a repository called `my-awesome-idea` (private by default) try
+- To create a Github repository called `my-awesome-idea` only (no push is performed).
 
 ```sh
-# The long version
+# long version
 gh-utils --config ~/Dropbox/github.edn --repo my-awesome-idea
 
-# Or shorter version
+# short version
 gh-utils -c ~/Dropbox/github.edn -r my-awesome-idea
 ```
 
-- If you already inside the root directory of the project and the file `config.edn` is
-in already in the same directory that you are running this command then
+- To create initial commit locally and then push the same codes to Github
 
 ```sh
-mkdir -p ~/codes/my-awesome-idea
-cd ~/codes/my-awesome-idea
+# long version
+gh-utils --config ~/Dropbox/github.edn --repo my-awesome-idea --init-commit --push
 
-# Just run the command without any argument
-gh-utils
+# short version
+gh-utils -c ~/Dropbox/github.edn --repo my-awesome-idea -i -p
+```
+- To push local version of existing repository to new Github repository
 
+```sh
 # To create your repository in Github and push your changes to remote branch try
-gh-utils -c ~/path/to/github-config.edn -r my-awesome-id -p
+$gh-utils --config ~/path/to/github-config.edn --repo my-awesome-id --push
+
+# Or using short form
+$gh-utils -c ~/path/to/github-config.edn -r my-awesome-id -p
 
 # Note without supplying -p the repository will be created remotely without initial git push
 ```
 
-Now open `https//github.com/YOUR-GITHUB-ID/my-awesome-idea` in your browser.
+Now open `https//github.com/<YOUR-GITHUB-ID>/my-awesome-idea` in your browser.
 
 ### Development
 
