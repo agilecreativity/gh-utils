@@ -6,7 +6,7 @@
 Clojure library designed to automate some useful git command without the need to
 use the web browser. Based on the [tentacles][] library with sensible default.
 You can simply create new Github repo with one simple command and one config file.
-TL;DR; `gh-utils --config ./Dropbox/github.edn --repo my-awesome-idea --push`
+TL;DR; `gh-utils --config ~/Dropbox/github.edn --repo my-awesome-idea --push`
 
 ### Installation and usage as command line interface (CLI)
 
@@ -56,13 +56,13 @@ Options:
 Examples:
 
 a) To push existing project that have already contain some commit (e.g. skip -i)
-$gh-utils -c ~/Dropbox/github.edn -r awesome-idea -l upstream -p
+gh-utils -c ~/Dropbox/github.edn -r awesome-idea -l upstream -p
 
 b) To create and push brand new project to Github and run initial commit
-$gh-utils -c ~/Dropbox/github.edn -r awesome-idea -i -l origin -p
+gh-utils -c ~/Dropbox/github.edn -r awesome-idea -i -l origin -p
 
 c) To create brand new project to Github, run initial commit and skip pushing to remote branch.
-$gh-utils -c ~/Dropbox/github.edn -r awesome-idea -i -l origin
+gh-utils -c ~/Dropbox/github.edn -r awesome-idea -i -l origin
 ```
 
 #### Usage
