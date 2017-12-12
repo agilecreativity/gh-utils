@@ -1,4 +1,4 @@
-(defproject gh-utils "0.3.1"
+(defproject gh-utils "0.3.2"
   :description "Create new Github repository from the comfort of your command line; TL;DR; $gh-utils --config ~/Dropbox/github.edn --repo my-awesome-idea"
   :url "https://github.com/agilecreativity/gh-utils"
   :license {:name "Eclipse Public License"
@@ -13,7 +13,7 @@
   :plugins [[lein-bin "0.3.5"]
             [lein-cljfmt "0.5.7"]
             [lein-auto "0.1.3"]]
-  :dependencies [[org.clojure/clojure "1.8.0"]
+  :dependencies [[org.clojure/clojure "1.9.0"]
                  [org.clojure/tools.cli "0.3.5"]
                  [irresponsible/tentacles "0.6.1"]
                  [me.raynes/fs "1.4.6"]

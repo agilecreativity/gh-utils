@@ -115,7 +115,7 @@ Now open `https//github.com/<YOUR-GITHUB-ID>/my-awesome-idea` in your browser.
 - Leiningen
 
 ```clj
-[org.clojars.agilecreativity/gh-utils "0.3.1"]
+[org.clojars.agilecreativity/gh-utils "0.3.2"]
 ```
 
 ### Related Links
@@ -137,8 +137,7 @@ Now open `https//github.com/<YOUR-GITHUB-ID>/my-awesome-idea` in your browser.
 
 Copyright © 2016-2017 Burin Choomnuan
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
 
 ---
 
