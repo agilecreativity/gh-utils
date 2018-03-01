@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file. This change
 
 - N/A
 
+## [0.3.3] - 2018-03-01
+
+- Read configuration using aero
+- Use lein-binplus instead of lein-bin
+- Minor code cleanup
+
 ## [0.3.2] - 2017-12-11
 
 - Bump version

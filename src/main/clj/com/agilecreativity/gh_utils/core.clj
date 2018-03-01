@@ -8,21 +8,23 @@
             [me.raynes.fs :as fs]
             [tentacles.data  :as t-data]
             [tentacles.repos :as t-repos]
-            [tentacles.users :as t-users])
-  (:gen-class))
+            [tentacles.users :as t-users]
+            [aero.core :refer [read-config]])
+  (:gen-class) ;; TODO: may be we don't need this?
+  )
 
-(defn- load-config
-  "Load config file that contains username/password information"
+(defn- expand-and-normalize
+  "Allow the ~ to be expanded."
   [filename]
-  (edn/read-string (slurp (-> filename
-                              fs/expand-home
-                              fs/normalized))))
+  (-> filename
+      fs/expand-home
+      fs/normalized))
 
 (defn- default-options [& options]
   "Define the sensible default options when creating new Github repository"
-  (let [opts (merge {:public       false
-                     :has-issue    false
-                     :has-wiki     false
+  (let [opts (merge {:public false
+                     :has-issue false
+                     :has-wiki false
                      :has-download false}
                     (first options))]
     opts))
@@ -33,12 +35,12 @@
   (if (:status result)
     (println "Problem creating new repository, errors : " (get-in result [:body :errors]))
     (do
-      (let [url           (:html_url result)
+      (let [url (:html_url result)
             origin-prefix "git remote add origin "
-            https-url     (str origin-prefix url ".git")
-            ssh-url       (-> https-url
-                              ;; Convert https:// to git@
-                              (clojure.string/replace-first #"https://github.com/" "git@github.com:"))]
+            https-url (str origin-prefix url ".git")
+            ssh-url (-> https-url
+                        ;; Convert https:// to git@
+                        (clojure.string/replace-first #"https://github.com/" "git@github.com:"))]
         (println (str "You have succesfully created new repository at : " url))))))
 
 (defn create-new-repo!
@@ -47,20 +49,19 @@
   (let [config-options (:config options)
         reponame (:repo options)]
     (try
-      (if-let [config (load-config config-options)]
+      (if-let [config (read-config (expand-and-normalize config-options))]
         (let [username (:username config)
               password (:password config)
-              auth     (str username ":" password)]
+              auth (str username ":" password)]
           (let [github-prefix "https://github.com/"
-                homepage      (str github-prefix (clojure.string/join "/" (list username reponame)))
-                result        (t-repos/create-repo reponame
-                                                   (default-options {:auth        auth
-                                                                     :description (str reponame " by " username)
-                                                                     :homepage    homepage}))]
+                homepage (str github-prefix (clojure.string/join "/" (list username reponame)))
+                result (t-repos/create-repo reponame (default-options {:auth auth
+                                                                       :description (str reponame " by " username)
+                                                                       :homepage homepage}))]
             (check-and-confirm-result result)
 
             ;; Make sure that we are running from the right directory
-            (let [base-dir       (fs/file ".")
+            (let [base-dir (fs/file ".")
                   {:keys [init-commit
                           remote-label
                           push]} options]
