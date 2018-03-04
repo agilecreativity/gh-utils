@@ -75,11 +75,12 @@
 
               ;; Run git push only if the user specify '--push' option.
               (if (fs/exists? ".git")
-                (if push (hlp/git-push-remote base-dir remote-label "master"))
+                (if push (hlp/git-push-remote base-dir remote-label ""))
+                ;; No valid git project, so let the the user know
                 (println "FYI: As you don't have the valid git project, you may like to run git init && git push manually."))))))
-
-      ;; Handle any problem/exception that we may have
+      (exit 0 "Done")
       (catch Exception e
+        ;; Handle any problem/exception that we may have
         (exit 1 (println (str "Error loading configuration file: " (.getMessage e))))))))
 
 (defn -main [& args]
