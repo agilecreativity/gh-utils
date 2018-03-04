@@ -6,6 +6,10 @@ All notable changes to this project will be documented in this file. This change
 
 - N/A
 
+## [0.3.4] - 2018-03-04
+
+- Read default config from `~/Dropbox/config/github.edn`
+
 ## [0.3.3] - 2018-03-01
 
 - Read configuration using aero
@@ -71,7 +75,9 @@ All notable changes to this project will be documented in this file. This change
 
 - Initial working version
 
-[Unreleased]: https://github.com/agilecreativity/gh-utils/compare/0.3.2...HEAD
+[Unreleased]: https://github.com/agilecreativity/gh-utils/compare/0.3.4...HEAD
+[0.3.4]: https://github.com/agilecreativity/gh-utils/compare/0.3.3...0.3.4
+[0.3.3]: https://github.com/agilecreativity/gh-utils/compare/0.3.2...0.3.3
 [0.3.2]: https://github.com/agilecreativity/gh-utils/compare/0.3.1...0.3.2
 [0.3.1]: https://github.com/agilecreativity/gh-utils/compare/0.3.0...0.3.1
 [0.3.0]: https://github.com/agilecreativity/gh-utils/compare/0.3.0...0.2.1

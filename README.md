@@ -6,7 +6,7 @@
 Clojure library designed to automate some useful git command without the need to
 use the web browser. Based on the [tentacles][] library with sensible default.
 You can simply create new Github repo with one simple command and one config file.
-TL;DR; `gh-utils --config ~/Dropbox/github.edn --repo my-awesome-idea --push`
+TL;DR; `gh-utils --config ~/Dropbox/config/github.edn --repo my-awesome-idea --push`
 
 ### Installation and usage as command line interface (CLI)
 
@@ -38,7 +38,7 @@ Once this is done you should be able to just run the command to see basic usage:
 Create new Github's project from a command line
 
 Usage: gh-utils [options]
-  -c, --config CONFIG              ~/Dropbox/github.edn
+  -c, --config CONFIG              ~/Dropbox/config/github.edn
   -r, --repo REPO
   -i, --init-commit
   -l, --remote-label REMOTE_LABEL  origin
@@ -47,7 +47,7 @@ Usage: gh-utils [options]
 
 Options:
 
---config       CONFIG       full path to the config file e.g. ~/Dropbox/github.edn
+--config       CONFIG       full path to the config file e.g. ~/Dropbox/config/github.edn
 --init-commit               run git-init and git commit on the local project
 --repo         REPO         name of repository to be created
 --remote-label REMOTE_LABEL remote label default to 'origin'
@@ -56,13 +56,13 @@ Options:
 Examples:
 
 a) To push existing project that have already contain some commit (e.g. skip -i)
-gh-utils -c ~/Dropbox/github.edn -r awesome-idea -l upstream -p
+gh-utils -c ~/Dropbox/config/github.edn -r awesome-idea -l upstream -p
 
 b) To create and push brand new project to Github and run initial commit
-gh-utils -c ~/Dropbox/github.edn -r awesome-idea -i -l origin -p
+gh-utils -c ~/Dropbox/config/github.edn -r awesome-idea -i -l origin -p
 
 c) To create brand new project to Github, run initial commit and skip pushing to remote branch.
-gh-utils -c ~/Dropbox/github.edn -r awesome-idea -i -l origin
+gh-utils -c ~/Dropbox/config/github.edn -r awesome-idea -i -l origin
 ```
 
 #### Usage
@@ -70,7 +70,7 @@ gh-utils -c ~/Dropbox/github.edn -r awesome-idea -i -l origin
 You will need to create the simple [edn](https://github.com/edn-format/edn) configuration
 file. The file can have any name but the format must be something like:
 
-I personally store this config file in the following location `~/Dropbox/github.edn`
+I personally store this config file in the following location `~/Dropbox/config/github.edn`
 
 ```clj
 {:username "YOUR-GITHUB-ID"
@@ -81,21 +81,22 @@ I personally store this config file in the following location `~/Dropbox/github.
 
 ```sh
 # long version
-gh-utils --config ~/Dropbox/github.edn --repo my-awesome-idea
+gh-utils --config ~/Dropbox/config/github.edn --repo my-awesome-idea
 
 # short version
-gh-utils -c ~/Dropbox/github.edn -r my-awesome-idea
+gh-utils -c ~/Dropbox/config/github.edn -r my-awesome-idea
 ```
 
 - To create initial commit locally and then push the same codes to Github
 
 ```sh
 # long version
-gh-utils --config ~/Dropbox/github.edn --repo my-awesome-idea --init-commit --push
+gh-utils --config ~/Dropbox/config/github.edn --repo my-awesome-idea --init-commit --push
 
 # short version
-gh-utils -c ~/Dropbox/github.edn --repo my-awesome-idea -i -p
+gh-utils -c ~/Dropbox/config/github.edn --repo my-awesome-idea -i -p
 ```
+
 - To push local version of existing repository to new Github repository
 
 ```sh
@@ -121,10 +122,7 @@ Now open `https//github.com/<YOUR-GITHUB-ID>/my-awesome-idea` in your browser.
 ### Related Links
 
 - The original [tentacles](http://raynes.github.io/tentacles/) documentation
-- ~~My [forked version][] of tentacles library with newer version of [clj-http][]~~
 - Ways people are trying to address this issue on [Stack Overflow](http://stackoverflow.com/questions/2423777/is-it-possible-to-create-a-remote-repo-on-github-from-the-cli-without-opening-br)
-- [clojure.core/re-pattern](https://clojuredocs.org/clojure.core/re-pattern)
-- [clojure.core/replace](https://clojuredocs.org/clojure.string/replace)
 
 ### Roadmaps & TODOs
 
@@ -135,7 +133,7 @@ Now open `https//github.com/<YOUR-GITHUB-ID>/my-awesome-idea` in your browser.
 
 ### License
 
-Copyright © 2016-2017 Burin Choomnuan
+Copyright © 2016-2018 Burin Choomnuan
 
 Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
 
