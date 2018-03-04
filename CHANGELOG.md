@@ -6,6 +6,10 @@ All notable changes to this project will be documented in this file. This change
 
 - N/A
 
+## [0.3.5] - 2018-03-04
+
+- Explicitly exit at the end
+
 ## [0.3.4] - 2018-03-04
 
 - Read default config from `~/Dropbox/config/github.edn`
@@ -75,7 +79,8 @@ All notable changes to this project will be documented in this file. This change
 
 - Initial working version
 
-[Unreleased]: https://github.com/agilecreativity/gh-utils/compare/0.3.4...HEAD
+[Unreleased]: https://github.com/agilecreativity/gh-utils/compare/0.3.5...HEAD
+[0.3.5]: https://github.com/agilecreativity/gh-utils/compare/0.3.4...0.3.5
 [0.3.4]: https://github.com/agilecreativity/gh-utils/compare/0.3.3...0.3.4
 [0.3.3]: https://github.com/agilecreativity/gh-utils/compare/0.3.2...0.3.3
 [0.3.2]: https://github.com/agilecreativity/gh-utils/compare/0.3.1...0.3.2
