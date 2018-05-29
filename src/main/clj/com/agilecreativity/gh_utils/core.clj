@@ -11,7 +11,7 @@
             [tentacles.users :as t-users]
             [aero.core :refer [read-config]])
   (:gen-class) ;; TODO: may be we don't need this?
-  )
+)
 
 (defn- expand-and-normalize
   "Allow the ~ to be expanded."
@@ -34,14 +34,14 @@
   [result]
   (if (:status result)
     (println "Problem creating new repository, errors : " (get-in result [:body :errors]))
-    (do
-      (let [url (:html_url result)
-            origin-prefix "git remote add origin "
-            https-url (str origin-prefix url ".git")
-            ssh-url (-> https-url
-                        ;; Convert https:// to git@
-                        (clojure.string/replace-first #"https://github.com/" "git@github.com:"))]
-        (println (str "You have succesfully created new repository at : " url))))))
+    (let [url (:html_url result)
+          origin-prefix "git remote add origin "
+          https-url (str origin-prefix url ".git")
+          ssh-url
+          (clojure.string/replace-first https-url
+                                        #"https://github.com/"
+                                        "git@github.com:")]
+      (println (str "You have succesfully created new repository at : " url)))))
 
 (defn create-new-repo!
   "Create new repository using the given options"
