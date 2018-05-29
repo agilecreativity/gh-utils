@@ -11,7 +11,10 @@
         :bin-path "~/bin"
         :bootclasspath false}
   :plugins [[lein-binplus "0.6.4"]
+            [lein-eftest "0.5.1"]
             [lein-cljfmt "0.5.7"]
+            [lein-kibit "0.1.6"]
+            [jonase/eastwood "0.2.5"]
             [lein-auto "0.1.3"]]
   :dependencies [[org.clojure/clojure "1.9.0"]
                  [org.clojure/tools.cli "0.3.5"]
@@ -20,4 +23,6 @@
                  [clj-jgit "0.8.10"]
                  [aero "1.1.3"]]
   :repositories [["jitpack" "https://jitpack.io"]]
+  :deploy-repositories [["clojars"  {:sign-releases false :url "https://clojars.org/repo"}]
+                        ["snapshots" {:sign-releases false :url "https://clojars.org/repo"}]]
   :main com.agilecreativity.gh_utils.core)
