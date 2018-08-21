@@ -1,5 +1,5 @@
 (ns com.agilecreativity.gh_utils.git_helper
-  (:require [clj-jgit.porcelain :refer :all :as cjp]
+  (:require [clj-jgit.porcelain :as cjp :refer :all]
             [clojure.java.shell :as shell]
             [me.raynes.fs :as fs]))
 

@@ -4,7 +4,9 @@ All notable changes to this project will be documented in this file. This change
 
 ## [Unreleased]
 
-- N/A
+## [0.3.7] - 2018-08-21
+
+- Update project dependencies
 
 ## [0.3.5] - 2018-03-04
 

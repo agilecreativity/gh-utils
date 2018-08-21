@@ -1,17 +1,12 @@
 (ns com.agilecreativity.gh_utils.core
-  (:require [clojure.edn :as edn]
-            [clojure.java.io :as io]
+  (:gen-class)
+  (:require [aero.core :refer [read-config]]
             [clojure.string :as string]
-            [clojure.tools.cli :refer [parse-opts] :as cli]
-            [com.agilecreativity.gh_utils.option :refer :all :as opt]
-            [com.agilecreativity.gh_utils.git_helper :refer :all :as hlp]
+            [clojure.tools.cli :as cli]
+            [com.agilecreativity.gh_utils.git_helper :as hlp :refer :all]
+            [com.agilecreativity.gh_utils.option :as opt :refer :all]
             [me.raynes.fs :as fs]
-            [tentacles.data  :as t-data]
-            [tentacles.repos :as t-repos]
-            [tentacles.users :as t-users]
-            [aero.core :refer [read-config]])
-  (:gen-class) ;; TODO: may be we don't need this?
-)
+            [tentacles.repos :as t-repos]))
 
 (defn- expand-and-normalize
   "Allow the ~ to be expanded."
