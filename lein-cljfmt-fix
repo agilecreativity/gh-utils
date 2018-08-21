@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+lein cljfmt fix `find ./src/main/clj -type f -iname "*.clj"`
+lein cljfmt fix `find ./src/test/clj -type f -iname "*.clj"`
