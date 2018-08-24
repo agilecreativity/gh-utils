@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file. This change
 
 ## [Unreleased]
 
+## [0.3.8] - 2018-08-24
+
+- Use maintained version of fs 
+- Minor code cleanup
+
 ## [0.3.7] - 2018-08-21
 
 - Update project dependencies
