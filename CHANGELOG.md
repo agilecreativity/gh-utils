@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file. This change
 
 ## [Unreleased]
 
+## [0.3.9] - 2019-02-23
+
+- Use latest version of lein-binplus that work properly with Clojure 1.10.0
+- Bump other dependencies to the most recent version 
+
 ## [0.3.8] - 2018-08-24
 
 - Use maintained version of fs 
