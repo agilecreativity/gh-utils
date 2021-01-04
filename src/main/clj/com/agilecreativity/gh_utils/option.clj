@@ -1,7 +1,7 @@
 (ns com.agilecreativity.gh_utils.option
   (:require [clojure.string :as str]))
 
-(def default-config "~/Dropbox/config/github.edn")
+(def default-config "~/Dropbox/config/github-burinc.edn")
 
 (def default-remote-label "origin")
 
@@ -21,7 +21,7 @@
                       ""
                       "Options:"
                       ""
-                      "--config       CONFIG       full path to the config file e.g. ~/Dropbox/config/github.edn"
+                      "--config       CONFIG       full path to the config file e.g. ~/Dropbox/config/github-burinc.edn"
                       "--init-commit               run git-init and git commit on the local project"
                       "--repo         REPO         name of repository to be created"
                       "--remote-label REMOTE_LABEL remote label default to 'origin'"

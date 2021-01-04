@@ -11,3 +11,5 @@ pom.xml.asc
 .hg/
 /config.edn
 /Tips.org
+## Extra
+cache/
