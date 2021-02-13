@@ -14,7 +14,7 @@
             [lein-ancient "0.6.15"]
             [lein-cljfmt "0.7.0"]
             [lein-auto "0.1.3"]]
-  :dependencies [[org.clojure/clojure "1.10.2-rc1" :scope "provided"]
+  :dependencies [[org.clojure/clojure "1.10.2" :scope "provided"]
                  [org.clojure/tools.cli "1.0.194"]
                  [irresponsible/tentacles "0.6.6"]
                  [clj-commons/fs "1.6.307"]
